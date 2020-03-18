@@ -10,10 +10,9 @@
 4. Alteração
 5. Remoção
  
-## Autor
+## Desenvolvedor
 
 > Thiago Jacinto @ 2020
 
-Desenvolvedor
 - [Github](https://github.com/thiagojacinto)
 - [LinkedIn](https://www.linkedin.com/in/thiago-jacinto-silva-dos-santos-3b629598/)
