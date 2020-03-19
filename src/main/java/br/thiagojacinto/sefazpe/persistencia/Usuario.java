@@ -1,7 +1,10 @@
-package br.thiagojacinto.sefazpe.negocio;
+package br.thiagojacinto.sefazpe.persistencia;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import br.thiagojacinto.sefazpe.negocio.Utilidades;
+
 
 public class Usuario {
 
@@ -24,7 +27,7 @@ public class Usuario {
 		this.senha = senha;
 
 		this.telefones = new ArrayList<String>();
-		adicionarTelefone(ddd, numero, tipo);
+		Utilidades.adicionarTelefone(telefones, ddd, numero, tipo);
 
 	}
 
@@ -36,18 +39,6 @@ public class Usuario {
 		this.senha = "VAZIO";
 
 		this.telefones = new ArrayList<String>();
-	}
-
-
-	// Métodos
-
-	// Criar item na lista `telefones` com cada `ddd` + `número`
-	public void adicionarTelefone(Integer DDD, String numero, String tipo) {
-
-		// Formatando a String com a seguinte ordem "0" + DDD + numero + "," + tipo:
-		String adicionar = String.format("0%d %s,%s", DDD, numero, tipo);
-
-		telefones.add(adicionar);
 	}
 
 	// Getters & Setters
