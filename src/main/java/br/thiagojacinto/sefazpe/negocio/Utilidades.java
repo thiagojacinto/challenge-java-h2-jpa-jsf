@@ -1,6 +1,7 @@
 package br.thiagojacinto.sefazpe.negocio;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Utilidades {
 
@@ -13,6 +14,17 @@ public class Utilidades {
 		String adicionar = String.format("0%d %s,%s", DDD, numero, tipo);
 
 		lista.add(adicionar);
+	}
+	
+	// Transformar a lista em String
+	public static String stringifyLista(List<String> lista) {
+		
+		// Varre a lista e concatena os items, separando-os com `;`
+		
+		return lista.stream()
+				.map(item -> String.valueOf(item))
+				.collect(Collectors.joining(";"));
+		
 	}
 
 }
