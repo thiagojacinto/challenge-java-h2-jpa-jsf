@@ -3,18 +3,38 @@ package br.thiagojacinto.sefazpe.persistencia;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import br.thiagojacinto.sefazpe.negocio.Utilidades;
 
-
+@Entity
+@Table(name = "usuarios")
 public class Usuario {
 
 	// Atributos
-
+	
+	// JPA -> É necessário um atributo para o índice
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private int id;
+	
+	@Column(name = "nome")
 	private String nome;
+	@Column(name = "email")
 	private String email;
+	@Column(name = "senha")
 	private String senha;
-
+	
 	private List<String> telefones;	// Implementar como ArrayList por ser dinâmico.
+	
+	@Column(name = "telefones")
+	private String telefonesString;
 
 	// Construtores:
 
@@ -28,20 +48,20 @@ public class Usuario {
 
 		this.telefones = new ArrayList<String>();
 		Utilidades.adicionarTelefone(telefones, ddd, numero, tipo);
+		
+		this.telefonesString = Utilidades.stringifyLista(telefones);
 
 	}
 
 	// 2. construtor vazio
 	public Usuario() {
-
-		this.nome = "VAZIO";
-		this.email = "VAZIO";
-		this.senha = "VAZIO";
-
-		this.telefones = new ArrayList<String>();
 	}
 
 	// Getters & Setters
+	
+	public int getId() {
+		return id;
+	}
 
 	public String getNome() {
 		return nome;
@@ -57,6 +77,14 @@ public class Usuario {
 
 	public List<String> getTelefones() {
 		return telefones;
+	}
+	
+	public String getTelefonesString() {
+		return telefonesString;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public void setNome(String nome) {
@@ -74,7 +102,22 @@ public class Usuario {
 	public void setTelefones(List<String> telefones) {
 		this.telefones = telefones;
 	}
+	
+	public void setTelefonesString(String telefonesString) {
+		this.telefonesString = telefonesString;
+	}
 
-
+	// Override toString
+	@Override
+	public String toString() {
+		return "Usuario [id = " + id 
+				+ ", nome = " + nome 
+				+ ", email = " + email 
+				+ ", senha = " + senha 
+				+ ", telefones = " + telefonesString 
+				+ " ]";
+	}
+	
+	
 
 }
