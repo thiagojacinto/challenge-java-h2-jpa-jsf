@@ -86,6 +86,21 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+        
+        <!-- TomEE plugin: rodar o servidor TomEE no runtime.  -->
+        <plugin>
+									<groupId>org.apache.tomee.maven</groupId>
+									<artifactId>tomee-maven-plugin</artifactId>
+									<version>8.0.1</version>
+									<configuration>
+										<context>restapi</context>
+										<tomeeClassifier>plus</tomeeClassifier>
+										<tomeeHttpPort>8080</tomeeHttpPort>
+										<tomeeShutdownPort>8005</tomeeShutdownPort>
+										<useBinaries>true</useBinaries>
+									</configuration>
+								</plugin>
+        
       </plugins>
     </pluginManagement>
   </build>
