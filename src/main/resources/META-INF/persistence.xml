@@ -7,7 +7,7 @@
 	<persistence-unit name="restapi_sefazpe" transaction-type="JTA">
 	
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<jta-data-source>jdbc/sefazpe</jta-data-source>
+		<jta-data-source>java:global/challenge-maven-h2-jpa-jsf/Usuario</jta-data-source>
 
 		<class>br.thiagojacinto.sefazpe.persistencia.Usuario</class>
 
