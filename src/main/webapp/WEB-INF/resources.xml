@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomee>
+    <Resource id="jdbc/sefazpe" type="javax.sql.DataSource">
+        JdbcDriver = org.h2.Driver
+        <!-- JdbcUrl = jdbc:h2:file:~/my_h2_db -->
+        JdbcUrl = jdbc:h2:mem:sefazpe
+        UserName = admin
+        Password = sefazpe
+        jtaManaged = true
+    </Resource>
+</tomee>
