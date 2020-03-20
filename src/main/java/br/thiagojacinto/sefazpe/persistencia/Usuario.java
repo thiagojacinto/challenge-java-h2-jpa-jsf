@@ -22,7 +22,7 @@ import br.thiagojacinto.sefazpe.negocio.Utilidades;
 @Entity
 @Table(name = "usuarios")
 @NamedQueries({
-	@NamedQuery(name = "Usuario.mostrarTodos", query = "SELECT usuario FROM Usuario usuario")
+	@NamedQuery(name = "Usuario.mostrarTodos", query = "SELECT u FROM Usuario u")
 })
 public class Usuario implements Serializable {
 
