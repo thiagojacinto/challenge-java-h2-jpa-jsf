@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tomee>
-    <Resource id="jdbc/sefazpe" type="javax.sql.DataSource">
+    <Resource id="jdbc/api_DS" type="javax.sql.DataSource">
+    <!-- Documentação: http://tomee.apache.org/datasource-config.html -->
+    
         JdbcDriver = org.h2.Driver
         <!-- JdbcUrl = jdbc:h2:file:~/my_h2_db -->
-        JdbcUrl = jdbc:h2:mem:sefazpe
-        UserName = admin
-        Password = sefazpe
+        JdbcUrl = jdbc:h2:tcp://localhost/mem:test
+        UserName = sa
+        Password = 
         jtaManaged = true
     </Resource>
 </tomee>
