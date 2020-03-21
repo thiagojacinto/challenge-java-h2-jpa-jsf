@@ -29,7 +29,6 @@ public class Usuario implements Serializable {
 	/**
 	 * Implementando `serializable`:
 	 * 
-	 * 	Prática de mercado
 	 */
 	private static final long serialVersionUID = 1L;
 
