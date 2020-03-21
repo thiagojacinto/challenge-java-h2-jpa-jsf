@@ -9,12 +9,12 @@ public class UsuarioDAO {
 	
 	// Injeção do `EntityManager`
 	
-	@PersistenceContext(unitName = "restapi_sefazpe")
+	@PersistenceContext(name = "restapi")
 	EntityManager entityManager;
 	
 	// Métodos de acesso aos dados
 	
-	public List mostrarTodos() {
+	public List<Usuario> mostrarTodos() {
 		
 		return entityManager.createNamedQuery(
 				"Usuario.mostrarTodos", Usuario.class).getResultList();
@@ -22,7 +22,6 @@ public class UsuarioDAO {
 	}
 	
 	public Usuario procurarPorId(int id) {
-		
 		return entityManager.find(Usuario.class, id);
 	}
 	
