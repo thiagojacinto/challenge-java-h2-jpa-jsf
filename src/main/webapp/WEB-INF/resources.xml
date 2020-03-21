@@ -5,7 +5,7 @@
     
         JdbcDriver = org.h2.Driver
         <!-- JdbcUrl = jdbc:h2:file:~/my_h2_db -->
-        JdbcUrl = jdbc:h2:tcp://localhost/mem:test
+        JdbcUrl = jdbc:h2:file:~/api_DS
         UserName = sa
         Password = 
         jtaManaged = true
