@@ -106,6 +106,18 @@
 										<tomeeHttpPort>8080</tomeeHttpPort>
 										<tomeeShutdownPort>8005</tomeeShutdownPort>
 										<useBinaries>true</useBinaries>
+										
+										<synchronization>
+            <extensions>
+              <extension>.class</extension>
+            </extensions>
+          </synchronization>
+
+          <reloadOnUpdate>true</reloadOnUpdate>
+          <systemVariables>
+            <tomee.serialization.class.blacklist>-</tomee.serialization.class.blacklist>
+          </systemVariables>
+										
 									</configuration>
 								</plugin>
         
