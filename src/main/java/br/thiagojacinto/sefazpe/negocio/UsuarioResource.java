@@ -17,7 +17,7 @@ import br.thiagojacinto.sefazpe.persistencia.Usuario;
 import br.thiagojacinto.sefazpe.persistencia.UsuarioDAO;
 
 @RequestScoped
-@Path("usuarios")
+@Path("/usuarios")
 @Produces(MediaType.APPLICATION_JSON)	// Configura a saída para JSON
 @Consumes(MediaType.APPLICATION_JSON)	// e a entrada também como JSON
 public class UsuarioResource {
@@ -31,7 +31,7 @@ public class UsuarioResource {
 	}
 	
 	@GET
-	@Path("{id}")	// Usa o caminho id + requisição tipo GET
+	@Path("/{id}")	// Usa o caminho id + requisição tipo GET
 	public Response procurarPorId(@PathParam("id") int id) {
 		
 		Usuario procurado = usuarioDAO.procurarPorId(id);
@@ -41,7 +41,7 @@ public class UsuarioResource {
 	}
 	
 	@PUT
-	@Path("{id}")
+	@Path("/{id}")
 	public Response atualizar(@PathParam("id") int id, Usuario usuario) {
 		
 		// Procurar o usuario:
@@ -67,7 +67,7 @@ public class UsuarioResource {
 	}
 	
 	@DELETE
-	@Path("{id}")
+	@Path("/{id}")
 	public Response delete(@PathParam("id") int id) {
 		Usuario procurado = usuarioDAO.procurarPorId(id);
 		
