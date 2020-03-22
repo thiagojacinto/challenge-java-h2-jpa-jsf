@@ -1,4 +1,4 @@
-package br.thiagojacinto.sefazpe.persistencia;
+package br.thiagojacinto.sefazpe.negocio;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import br.thiagojacinto.sefazpe.negocio.Utilidades;
+/*
+ * @author: Thiago Jacinto
+ */
 
 @Entity
 @Table(name = "usuarios")
@@ -55,6 +57,7 @@ public class Usuario {
 
 	// 2. construtor vazio
 	public Usuario() {
+		
 	}
 
 	// Getters & Setters
