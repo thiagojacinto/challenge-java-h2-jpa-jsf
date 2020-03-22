@@ -76,7 +76,7 @@ public class UsuarioServlet extends HttpServlet {
 		List<Usuario> listaDeUsuarios = usuarioDAO.mostrarTodos();
 		requisicao.setAttribute("listaDeUsuarios", listaDeUsuarios);
 		// TODO: direcionar o dispacher para algum lugar
-		RequestDispatcher dispatcher = requisicao.getRequestDispatcher("");
+		RequestDispatcher dispatcher = requisicao.getRequestDispatcher("lista-usuarios.jsp");
 		dispatcher.forward(requisicao, resposta);
 		
 	}
@@ -101,7 +101,7 @@ public class UsuarioServlet extends HttpServlet {
 			
 		Usuario procurado = usuarioDAO.procurar(idProcurado);
 		//TODO: direcionar o dispacher EDITAR para algum lugar
-		RequestDispatcher dispatcher = requisicao.getRequestDispatcher("lista");
+		RequestDispatcher dispatcher = requisicao.getRequestDispatcher("form-cadastro.jsp");
 		requisicao.setAttribute("usuario", procurado);
 		dispatcher.forward(requisicao, resposta);
 	}

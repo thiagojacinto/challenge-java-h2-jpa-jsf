@@ -11,6 +11,6 @@ public class App
     	/*
     	 * TODO: Ajustar os métodos da API no Main.
     	 */
-    	System.out.println( "Hello World!" );
+    	System.out.println( "Hello World! Essa é a aplicação de Thiago Jacinto para o desafio proposto." );
     }
 }
