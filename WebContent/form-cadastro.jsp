@@ -18,14 +18,17 @@
 	<main>
 	
 		<c:if test="${usuario != null}">
-			<form action="atualizar" method="post">
+			<c:out value="${acao = 'atualizar'}">
+			</c:out>
 		</c:if>
 		
 		<c:if test="${usuario == null}">
-			<form action="adicionar" method="post">
+			<c:out value="${acao = 'adicionar'}">
+			</c:out>
 		</c:if>
 		
-		<table border="1">
+		<form action="${acao }" method="post">
+			<table border="1">
 			
 					<c:if test="${usuario != null}">
             				<h2>Editar usuário:</h2>
